@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/etc/network.d'
+let g:netrw_dirhist_2='/home/miles/.i3'
+let g:netrw_dirhist_3='/home/miles/.i3/icons'
+let g:netrw_dirhist_4='/home/miles/.ncmpcpp'
+let g:netrw_dirhist_5='/usr/lib/notification-daemon-1.0'
+let g:netrw_dirhist_6='/home/miles/.i3'
+let g:netrw_dirhist_7='/home/miles/.thunderbird/fw16g1ql.default/ImapMail/imap.princeton-1.edu'
+let g:netrw_dirhist_8='/etc/cron.hourly'

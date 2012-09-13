@@ -1,0 +1,44 @@
+%        File: notes.tex
+%     Created: Thu Sep 13 10:00 AM 2012 E
+% Last Change: Thu Sep 13 10:00 AM 2012 E
+%
+\documentclass{article}
+\usepackage{amsmath,fullpage,amsmath,verbatim,enumitem}
+\title{COS 217 notes}
+\author{Miles Yucht}
+\begin{document}
+\maketitle
+
+\section{C vs. Java}
+\begin{itemize}
+  \item
+    Java design goals
+    \begin{itemize}
+      \item Supports object oriented code
+      \item Execute code securely from other sources
+      \item Adopt good parts of other languages ( C, C++ )
+    \end{itemize}
+  \item
+    Implications for Java
+    \begin{itemize}
+      \item Good for application-level programming
+      \item High level
+      \item Chooses portability and security over efficiency and flexibility
+    \end{itemize}
+  \item
+    C design goals
+    \begin{itemize}
+      \item Support structured programming
+      \item Support development of Unix and systems programming
+    \end{itemize}
+  \item Implications for C
+    \begin{itemize}
+      \item Lower level
+      \item Efficiency and flexibility over security and portability
+      \item Shoot yourself in the foot\dots
+    \end{itemize}
+\end{itemize}
+
+\end{document}
+
+

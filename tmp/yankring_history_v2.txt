@@ -1,0 +1,100 @@
+ ,v
+  \item ,V
+PSY 252 L01PSY 252 L01ENV 337 S01CHM 303 C07added: 5CHM 303COS 217ENV 337HIS 354PSY 252		 Search	  Looking for Distribution Courses?	 Number of Courses Found: 3ISC231 An Integrated, Quantitative Introduction to the Natural Sciences IISC232QRAn Integrated, Quantitative Introduction to the Natural Sciences IISC235 An Integrated, Quantitative Introduction to the Natural Sciences IIIFall 2012-2013 ISC 235 / CHM 235 / COS 235 / MOL 235 / PHY 235   No Pass/D/FailAn Integrated, Quantitative Introduction to the Natural Sciences IIIPeter Andolfatto David Botstein Eric F. Wieschaus ENROLLMENT BY APPLICATION OR INTERVIEW. DEPARTMENTAL PERMISSION REQUIRED.An integrated, mathematically and computationally sophisticated introduction to biochemistry, molecular biology, genetics, genomics and evolution. This course is designed as a sequence: 235 in the fall and 236 in the spring. Multiple faculty will be involved over the year: D. Botstein, M. Murthy, E. Wieschaus (MOL), J. Rabinowitz (CHM), P. Andolfatto (EEB). 2 hrs and 40 min of lecture, one precept (1 hr 50 min), one evening problem session.Sample reading list:Hartl, D and Ruvolo, M, Genetics: Analysis of Genes and Genomes, 8th Ed.Berg, Stryer, Tymoczko, BiochemistrySee instructor for complete list Reading/Writing assignments:Reading and problem sets totaling 7-10 hours each week will be assigned. Requirements/Grading: Mid Term Exam - 30%Final Exam - 45%Class/Precept Participation - 5%Problem set(s) - 20%Other Requirements:Not Open to Freshmen. Prerequisites and Restrictions:Students should have completed ISC/CHM/COS/MOL/PHY 231-234, or equivalent preparation (MOL 214, COS 126, CHM 201-202 or 203-204, PHY 103-104 or 105-106), or received permission from Instructor.. Other information:Continuation of the integrated science sequence of ISC/CHM/COS/MOL/PHY 231-234, but appropriate as an alternative for science students who have completed introductory courses in Chemistry, Physics and Computer Science. Website:  click hereGo to the Registrar's pageGot something to say about ISC235?Click here to tell us!Course ReviewsF 2006 · Joshua D. RabinowitzOverall: 4.00Content: 4.00 · Workload: A little morethe course is without a doubt some of the best science education to be had anywhere, ever. the only question is whether the material is something you want to learnthis course is a life-changing experience for any aspiring scientist who wants to work in a field related to biologyF 2006 · Professor Not Listed Overall: 4.00Content: 4.00 · Workload: AverageBiology finally takes over Integrated Science in 235. This has been my favorite part of the series so far, but I do know it's not the same story for some PHY majors. The important thing I think is that if you already got here, you're better off finishing the whole series, as it Will be more beneficial than going back to old-school science teaching having been trained in a different way.Professor ReviewsF 2006 · Joshua D. RabinowitzOverall: 4.00Organization: 4.00 · Accessibility: 4.00 · Appeal: 4.00He is master of clicker questions and moral rejuvenating pep talks. He teaches with the tough love of your favorite sports coach. He got a bunch kindergarten-like integrated science students to learn 8 weeks of dense, condensed organic chemistry. His classroom demeanor can be nervous, but he never misses a beat, and whenever he turned his head towards the wall in embarrassment at our stupidity, it inspired us to do better. An energetic, articulate, good humored, and much-loved professor.F 2006 · David BotsteinOverall: 3.70Organization: 4.00 · Accessibility: 3.70 · Appeal: 3.70Generally a great lecturer (and of course famous and brilliant researcher!) who, when he's not self-indulgently waxing about some pet topic (e.g. "the difference between high school and college"), is able to strip complex and detailed topics in biology to their essentially scientific and quantitative insights. However this means that when he lectures it's often hard to follow what it is he's trying to explain to you if you don't already know a fair bit about what he's talking about. He's well aware and unapologetic about this, as he is about most things. Students complained about the confusing wording of a midterm problem, which led them to attempt (and fail) to solve a much more difficult problem than the one asked. His response was: "I've been giving that problem for thirty years, and every year there are a few students who complain that it confused them." No one present (this is a second hand account) raised their fists to demand why thirty years of complaints hadn't prompted a change in the wording, which is unfortunate because even though students often find him intimidating, Prof. Botstein seems to warm up to and appreciate it when people speak their mind and argue with him. He can be abrasive in ways that are not endearing, but whenever speaking with him it is important to remember that he cares a lot about teaching and about his students and has devoted enormous time and effort to make things better for them and for science education in general.Follow ICE on Facebook or Twitter! | Currently Online: 790 ©2008 - 2012 Integrated Course Engine 3.0 | About ICE Please email Gyeong-Sik Choi '10 with comments/bug reports | Last update: 08/17/2012 05:57am Note: Internet Explorer is not supported.Welcome, Miles Yucht!,V
+      \item Chooses security over flex,V
+A,v
+,V
+      \item,V
+A Brief History of C,v
+itemize,v
+Hey!,V
+`whoami`@`hostname -s` $cwd,v
+\,v
+map <C-k> <C-w>k,V
+%        File: notes.tex%     Created: Thu Sep 13 10:00 AM 2012 E% Last Change: Thu Sep 13 10:00 AM 2012 E%\documentclass{article}\usepackage{amsmath,fullpage,amsmath}\begin{document}\end{document},V
+map <C-j> <C-w>j,V
+},v
+>,v
++,v
+<,v
+],v
+r,v
+e,v
+p,v
+a,v
+4,v
+[,v
+%        File: notes.tex%     Created: Thu Sep 13 10:00 AM 2012 E% Last Change: Thu Sep 13 10:00 AM 2012 E%\documentclass[a4paper]{article}\begin{document}<++>\end{document},V
+# Linux kernel module handlingcore/linux # 3.4.9-1 -> 3.5.3-1# The linux kernel and modulescore/linux-headers # 3.4.9-1 -> 3.5.3-1,V
+core/linux # 3.4.9-1 -> 3.5.3-1,v
+http://www.ics.com/,v
+,,v
+0,v
+:,v
+d,v
+  fn=${file%\.flac}  echo "$file",V
+  faac -o "$fn.aac" "$file",V
+n,v
+c,v
+l,v
+f,v
+.,v
+    ,1
+i,v
+-,v
+m,v
+t,v
+  tempfn=${file#"$CURDIR/"},V
+echo $CURDIR,V
+  echo "$file",V
+  fn=${tempfn%.flac},V
+  local fn,V
+  k,V
+show,v
+aac linux,v
+--------TAGS    ,v
+core/linux # 3.4.9-1 -> 3.5.3-1# The linux kernel and modulescore/linux-headers # 3.4.9-1 -> 3.5.3-1# Header files and scripts for building modules for linux kernel,V
+Linux,v
+alias rm='mv ,V
+      while [ -e ~/.Trash/"$dst" ]; do        dst="$dst "$(date +%H-%M-%S)      done      mv "$path" ~/.Trash/"$dst"    fi,v
+function rm () {  local path  for path in "$@"; do    # ignore any arguments    if [[ "$path" = -* ]]; then :    else      local dst=${path##*/}      # append the time if necessary      while [ -e ~/.Trash/"$dst" ]; do        dst="$dst "$(date +%H-%M-%S)      done      mv "$path" ~/.Trash/"$dst"    fi  done},v
+extra/fontconfig # 2.8.0-2 -> 2.10.1-2# A library for configuring and customizing font access,V
+20.00",v
+core/linux # 3.4.9-1 -> 3.5.3-1# The linux kernel and modulescore/linux-headers # 3.4.9-1 -> 3.5.3-1# Header files and scripts for building modules for linux kernel,v
+I can work as a rehearsal pianist for any group rehearsals or for anyone who wants to go over their part on their own. ,v
+bindsym $mod+Shift+o exec urxvt -e gvim ,V
+camelCaseMotion,V
+void pour(int vol1, int vol2, int &bkt1, int &bkt2, int ind2){  if (vol1 <= capacity[ind2] - vol2)  {    bkt2 = vol2 + vol1;    bkt1 = 0;  } else  {    bkt1 = vol1 - capacity[ind2] + vol2;    bkt2 = capacity[ind2];  }  assert(bkt1 >= 0 && bkt2 >= 0);},V
+core/linux # 3.4.9-1 -> 3.5.3-1# A library for configuring and customizing font access,V
+  bvals[0] = bkt[0];  bvals[1] = bkt[1];  bvals[2] = bkt[2];,v
+  bvals[0] = bkt[0];  bvals[1] = bkt[1];  bvals[2] = bkt[2];,V
+  bvals[1] = bkt[1];,V
+  bvals[0] = bkt[0];,V
+{bkt[0], bkt[1], bkt[2]};,v
+3,v
+  int bvals[3] = {bkt[0], bkt[1], bkt[2]};,V
+  {,V
+  },V
+=,v
+  cout << (a == 0 ? "true" : "false") << endl;,V
+  cout << (a == 0 ? "true" : "false") << endl;  if (a == 0)  {,V
+!,v
+  check_vol(bvals);,V
+  check_vol(bvals[0], bvals[2]);,V
+2,v
+b,v
+*,v
+bucket,v
+j,v
+h,v
+k,v
+bvals,v
+o,v
+v,v
+bkt2,v
+bkt1,v
+void check_vol(int *bucket){  if (bucket[0] == 0)    sols[bucket[2]] == true;},V
+ 2,,v
+1,v
+toind,v
+s,v

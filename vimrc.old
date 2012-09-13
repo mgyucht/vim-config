@@ -1,0 +1,286 @@
+" Miles Yucht's .vimrc
+" Path - /home/miles/.vimrc
+" Last edited: 25 Apr 2012
+
+" Set runtimepath "
+" --------------- "
+
+set runtimepath+=/usr/share/lilypond/2.14.2/vim
+set runtimepath+=/home/miles/.vim/bundle/vundle
+
+" ------------------
+" My Plugins!
+" ------------------
+
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-surround'
+
+" ------------------
+" Plugins
+" ------------------
+
+let g:proj_flags="imstvcg"
+
+let g:Powerline_symbols='fancy'
+let g:Tex_DefaultTargetFormat='pdf'
+
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtBS()':              ['<bs>', '<c-]>'],
+  \ 'PrtDelete()':          ['<del>'],
+  \ 'PrtDeleteWord()':      ['<c-w>'],
+  \ 'PrtClear()':           ['<c-u>'],
+  \ 'PrtSelectMove("j")':   ['<c-j>', '<down>'],
+  \ 'PrtSelectMove("k")':   ['<c-k>', '<up>'],
+  \ 'PrtSelectMove("t")':   ['<Home>', '<kHome>'],
+  \ 'PrtSelectMove("b")':   ['<End>', '<kEnd>'],
+  \ 'PrtSelectMove("u")':   ['<PageUp>', '<kPageUp>'],
+  \ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
+  \ 'PrtHistory(-1)':       ['<c-n>'],
+  \ 'PrtHistory(1)':        ['<c-p>'],
+  \ 'AcceptSelection("e")': ['<c-t>', '<2-LeftMouse>'],
+  \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
+  \ 'AcceptSelection("t")': ['<cr>'],
+  \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
+  \ 'ToggleFocus()':        ['<s-tab>'],
+  \ 'ToggleRegex()':        ['<c-r>'],
+  \ 'ToggleByFname()':      ['<c-d>'],
+  \ 'ToggleType(1)':        ['<c-f>', '<c-up>'],
+  \ 'ToggleType(-1)':       ['<c-b>', '<c-down>'],
+  \ 'PrtExpandDir()':       ['<tab>'],
+  \ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>'],
+  \ 'PrtInsert()':          ['<c-\>'],
+  \ 'PrtCurStart()':        ['<c-a>'],
+  \ 'PrtCurEnd()':          ['<c-e>'],
+  \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
+  \ 'PrtCurRight()':        ['<c-l>', '<right>'],
+  \ 'PrtClearCache()':      ['<F5>'],
+  \ 'PrtDeleteEnt()':       ['<F7>'],
+  \ 'CreateNewFile()':      ['<c-y>'],
+  \ 'MarkToOpen()':         ['<c-z>'],
+  \ 'OpenMulti()':          ['<c-o>'],
+  \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
+  \ }
+
+let g:syntastic_auto_loc_list=1
+
+let g:Tlist_Use_Right_Window=1
+
+let g:ctrlp_use_caching=1
+
+let g:ctrlp_clear_cache_on_exit=0
+
+" General Settings "
+" ---------------- "
+
+let mapleader=","
+
+set number
+set tw=80
+set history=1000
+set autoread
+set autochdir
+
+set so=2
+
+set timeoutlen=300
+
+set wildmenu
+set wildignore=*.dvi,*.tif,*.png,*.pdf,*.xol
+
+set showcmd
+
+set ttyfast
+
+set hid
+
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+set ignorecase
+set smartcase
+
+set hlsearch
+
+set incsearch
+set nolazyredraw
+
+set magic
+
+set noeb t_vb=
+set novisualbell
+set noerrorbells
+
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set smarttab
+
+set ai
+set si
+set wrap
+
+" For Powerline
+set laststatus=2
+set encoding=utf-8
+
+" Makes folding issues better
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
+" Space highlighting at EOL
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" General Key Mappings "
+" -------------------- "
+
+nnoremap <silent> <leader>n :let @/=""<cr>
+
+nnoremap <leader>w :w!<cr>
+
+nnoremap <leader>ev :tabnew! ~/.vimrc<cr>
+nnoremap <leader>sv :so ~/.vimrc<cr>
+
+nnoremap j gj
+nnoremap k gk
+
+nnoremap <s-h> gT
+nnoremap <s-l> gt
+
+nnoremap <tab> ==
+
+inoremap <s-left> <esc>bi
+inoremap <s-right> <esc>wi
+
+inoremap <c-e> <esc><c-e>
+inoremap <c-y> <esc><c-y>
+
+inoremap jk <esc>
+inoremap kj <esc>
+
+vnoremap <c-j> :!bash<CR>u
+
+" Move tabs with alt + left|right
+nnoremap <leader>h :tabmove -1<CR>
+nnoremap <leader>l :tabmove +1<CR>
+
+" GUI Settings "
+" ----------- "
+
+if has("gui_running")
+  colorscheme badwolf
+  set guioptions-=T
+  set gfn=Monospace\ 9
+endif
+
+" Appearance "
+" ---------- "
+
+set bg=light
+set bg=dark
+
+syntax enable
+
+" Filetype Settings "
+" ----------------- "
+
+filetype plugin on
+filetype indent on
+
+set grepprg=grep\ -nH\ $*
+
+let g:tex_flavor='latex'
+
+" Autocommands "
+" ------------ "
+
+autocmd VimEnter * call LoadNERDTree()
+
+augroup latex
+        autocmd!
+        au FileType tex call TexAU()
+augroup end
+
+augroup java
+        autocmd!
+        au FileType java call JavaAU()
+augroup end
+
+augroup make
+        autocmd!
+        au FileType make call MakefileAU()
+augroup end
+
+augroup asm
+        autocmd!
+        au FileType asm call AsmAU()
+augroup end
+
+" ----------------------------------------
+" Functions
+" ----------------------------------------
+
+function! LoadNERDTree()
+        :NERDTree
+        call feedkeys("\<c-w>p")
+endfunction
+
+function! TexAU()
+        iabbrev <buffer> `P \Phi
+        inoremap <buffer> / $$<lt>++><esc>4hi
+        inoremap <buffer> ? _{}<lt>++><esc>4hi
+        inoremap <buffer> > :
+        inoremap <buffer> < ;
+        inoremap <buffer> ' ^
+        inoremap <buffer> ; &
+        inoremap <buffer> : %
+        inoremap <buffer> [ {}<lt>++><esc>4hi
+        inoremap <buffer> ] }
+        inoremap <buffer> { []<lt>++><esc>4hi
+        inoremap <buffer> } ]
+        inoremap <buffer> ( (  )<lt>++><esc>5hi
+        inoremap <buffer> _ /
+        inoremap <buffer> & '
+        inoremap <buffer> ^ >
+        inoremap <buffer> % <
+        inoremap <buffer> $ ?
+
+        " Taglist toggle
+        nnoremap <silent> <F8> :TlistToggle<CR>
+endfunction
+
+function! JavaAU()
+        nnoremap <buffer> <leader>ll ! javac % <cr>
+
+        " Taglist toggle
+        nnoremap <silent> <F8> :TlistToggle<CR>
+endfunction
+
+function! MakefileAU()
+        setl noexpandtab
+
+        " Taglist toggle
+        nnoremap <silent> <F8> :TlistToggle<CR>
+endfunction
+
+function! AsmAU()
+        setl sw=8
+        setl tabstop=8
+
+        " Taglist toggle
+        nnoremap <silent> <F8> :TlistToggle<CR>
+endfunction
