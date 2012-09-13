@@ -1,0 +1,5 @@
+# .gitignore
+#
+# Choose files to ignore in the vim-config repo.
+
+tmp/

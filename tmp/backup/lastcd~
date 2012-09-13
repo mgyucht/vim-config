@@ -1,9 +1,0 @@
-#!/bin/bash
-#
-# Move to the last directory cd-ed to.
-
-lastcd() {
-        LASTDIR=`cat ~/.lastcd`
-        cd "$LASTDIR"
-        LASTDIR=""
-}

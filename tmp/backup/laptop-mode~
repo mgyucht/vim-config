@@ -1,7 +1,0 @@
-#!/bin/bash
-#
-# This script switches the mouse off and starts CellWriter. Only to be executed
-# by magick-rotation.
-
-mouseoff
-cellwriter --show-window
