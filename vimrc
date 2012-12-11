@@ -4,8 +4,8 @@
 
 "Init -----------------------------------------------{{{
 set nocompatible "It's not vi!
-filetype off
-set rtp+=~/.vim/bundle/vundle/,/usr/share/lilypond/2.14.2/vimk
+
+set rtp+=~/.vim/bundle/vundle/,/usr/share/lilypond/2.14.2/vimk/
 call vundle#rc()
 
 " Github repos ------------------------------------{{{
@@ -48,10 +48,8 @@ Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols='unicode'
 "Tags
 Bundle 'majutsushi/tagbar'
-"Ack integration
-Bundle 'mileszs/ack.vim'
-"Like snipmate but better
-Bundle 'SirVer/ultisnips'
+"Like snipmate but better/fucks up digraphs
+"Bundle 'SirVer/ultisnips'
 ",c* comments stuff in/out
 Bundle 'scrooloose/nerdcommenter'
 "File explorer
@@ -59,12 +57,7 @@ Bundle 'scrooloose/nerdtree'
 "Automatic syntax/code checker
 Bundle 'scrooloose/syntastic'
 let g:syntastic_auto_loc_list=1
-"tmux interaction
-"Bundle 'benmills/vimux'
 
-" Unite
-"Bundle 'h1mesuke/unite-outline'
-"Bundle 'Shougo/unite.vim'
 ",lj will allow jumping to to buffers easily
 Bundle 'sjbach/lusty'
 "Undo tree visualizer
@@ -73,29 +66,25 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 "Lets . repeat more types of commands
 Bundle 'tpope/vim-repeat'
-"Increment/decrement dates
-Bundle 'tpope/vim-speeddating'
 ""Operate on surrounding symbols (like change parens to brackets)
 Bundle 'tpope/vim-surround'
 "Random functions. [e ]e switch lines (stuff like that)
 Bundle 'tpope/vim-unimpaired'
-"Check to make this is working properly and not updating too often
-"Bundle 'xolox/vim-easytags'
-"let g:easytags_updatetime_autodisable=1
-"Bundle 'xolox/vim-session'
 "Build a single file. Very easy to use without make
 Bundle 'xuhdev/SingleCompile'
 " }}}
 
 " Vim-scripts------------------------------------ {{{
+"Lets me edit files in hex
+Bundle 'vim-scripts/hexman.vim'
+"Assembly language syntax highlighting
+Bundle 'vim-scripts/GNU-as-syntax'
 "Makes Vim work better with large files
 Bundle 'LargeFile'
 ""Cpp completion
 Bundle 'OmniCppComplete'
 ",d will pull up all lines with TODO
 Bundle 'TaskList.vim'
-"Plugin to create links
-Bundle 'utl.vim'
 ""Clipboard manager
 Bundle 'YankRing.vim'
 "<c-w>o to toggle "zooming into" a window
@@ -129,7 +118,7 @@ set expandtab
 set smarttab
 
 "Scroll up or down when # lines away from edge
-set scrolloff=20
+set scrolloff=15
 set autoindent
 set smartindent
 "Alert me if a file has been changed
@@ -141,8 +130,11 @@ set novisualbell
 set noerrorbells
 "Increases smoothness - fast terminal
 set ttyfast
+
 "Show current line/column in statusbar
-set ruler
+"Not necessary thanks to powerline
+"set ruler
+
 "Can backspace over autoindents, linebreaks (join lines), and start of insert
 "without start means no backspacing except through what was just inserted.
 "Must use x/d/some other method in such cases
@@ -166,7 +158,7 @@ set completeopt=longest,menu,menuone,preview
 set wrap
 set linebreak
 "Break lines at whitespace after # characters
-set textwidth=80
+set textwidth=78
 "Allow larger history in command mode
 set history=1000
 "q: allow formatting comments with gq
@@ -205,31 +197,30 @@ set autochdir
 "Get some color in here
 
 colorscheme default
+set background=dark
 
-highlight Visual cterm=NONE ctermfg=white ctermbg=darkgrey
-highlight CursorColumn cterm=NONE ctermfg=green ctermbg=red
-"
-" }}}
+highlight Visual ctermfg=white ctermbg=darkgrey
+highlight CursorColumn ctermfg=green ctermbg=red
+
 " GUI ----------------------------------------------- {{{
 
 if has('gui_running')
+  set background=light
   colorscheme solarized
+
   "No toolbar
-  set guioptions-=T
   "No menubar
-  set guioptions-=m
   "No scrollbar
-  set guioptions-=r
-  set guioptions-=l
-  set guioptions-=R
-  set guioptions-=L
-  set guifont=DejaVu\ Sans\ Mono\ 10
+  set guioptions=
+
+  set guifont=DejaVu\ Sans\ Mono\ 9
 endif
 
 " }}}
 
 " }}}
 
+" }}}
 " Tags ----------------------------------------------- {{{
 "Check these directories for tag files
 set tags+=~/vim/commontags
@@ -246,7 +237,7 @@ set wildmode=list:longest
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.dvi,*.tif,*.pdf,*.xol          " Other graphical files
+set wildignore+=*.dvi,*.tif,*.pdf,*.xoj          " Other graphical files
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
@@ -295,9 +286,6 @@ vnoremap <Space> za
 "Refocus folds - close all folds, open current
 nnoremap ,z zMzvzz
 
-"Recursively open current top level fold
-nnoremap z0 zCz0
-
 " These commands open folds
 set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
 
@@ -339,12 +327,6 @@ nnoremap <leader>v <C-w>v<C-w>l
 "Horizontal split
 nnoremap <leader>h <C-w>s<C-w>j
 
-"Paste from X into terminal
-"nnoremap <c-v> :r!xclip -o<cr>
-"Nevermind!  Do:
-"to paste: "+p or "*p
-"to copy:  "+yy or "*yy
-
 "Toggle line numbers - relative good for jumping
 nnoremap <leader>lr :setlocal relativenumber!<cr>
 nnoremap <leader>la :setlocal number!<cr>
@@ -373,7 +355,6 @@ map <C-n> :bnext<CR>
 "nnoremap <Leader>b LustyJuggler<cr>
 "Disable default mappings for LustyJuggler/Explorer
 "I do not use explorer, so no new mappings for it
-"let g:LustyJugglerDefaultMappings=0
 let g:LustyExplorerDefaultMappings=0
 " }}}
 
@@ -425,22 +406,17 @@ let g:LargeFile=10
 "Yankring location
 let g:yankring_history_dir="~/.vim/tmp"
 
-nmap <F9> :SingleCompile<CR>
-nmap <F10> :SingleCompileRun<CR>
-" Used for singlecompile
+map <F6> <Plug>HexManager
+"Spawn a new terminal in my current directory
+map <silent> <F7> :!urxvtc<CR>
 
+nnoremap <F9> :SingleCompile<CR>
+nnoremap <F10> :SingleCompileRun<CR>
 "Tagbar for tag navigation
-map <F11> :TagbarToggle<cr>
-
-map <F12> :make -j5 CXX="ccache g++"
+nnoremap <F11> :TagbarToggle<cr>
+nnoremap <F12> :NERDTreeToggle<CR>
 
 nnoremap <leader>ss :mksession
-
-"Ack is awesome with quickfix window
-nnoremap <leader>a :Ack<space>
-
-"Open NERDTree
-nnoremap <leader><leader>n :NERDTreeToggle<cr>
 
 "Toggle rainbow parens - Should make more vibrant
 nnoremap <leader>R :RainbowParenthesesToggle<cr>
@@ -486,15 +462,19 @@ augroup ft_c
     au!
     au FileType c setlocal foldmethod=syntax
     au FileType c call SetNarrowText()
+    au FileType c call EmacsTab()
 augroup END
 " }}}
 
 " Assembly {{{
 augroup ft_asm
     au!
+    au FileType asm setlocal comments+=:##
     au FileType asm setlocal noexpandtab
     au FileType asm setlocal softtabstop=0
     au FileType asm setlocal shiftwidth=8
+    au FileType asm setlocal foldmethod=syntax
+    au FileType asm call SetNarrowText()
     set number
 augroup END
 " }}}
@@ -503,7 +483,6 @@ augroup END
 augroup ft_cpp
     au!
     au FileType cpp setlocal foldmethod=syntax
-    " set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
     au FileType cpp call SetNormalText()
 augroup END
 " }}}
@@ -532,6 +511,8 @@ augroup ft_python
     au FileType python setlocal foldmethod=indent
     au Filetype python setlocal foldnestmax=2
     au FileType python call SetNormalText()
+    au FileType python set shiftwidth=2
+    au FileType python set softtabstop=2
 augroup END
 " }}}
 
@@ -609,8 +590,8 @@ function! TexAU()
 endfunction
 
 function! SetNormalText()
-  set colorcolumn=80
-  set textwidth=80
+  set colorcolumn=78
+  set textwidth=78
 endfunction
 
 function! SetNarrowText()
@@ -628,8 +609,16 @@ function! HighlightWhitespace()
   autocmd BufWinLeave * call clearmatches()
 endfunction
 
+function! EmacsTab()
+
+  " Change tab behavior to emacs-like indentation
+  set cinkeys=0{,0},0),0#,!<Tab>,;,:,o,O,e,!
+  set cinoptions={1s,>2s,e-1s,^-1s,n-1s,:1s,p5,i4,(0,u0,W1s
+  set indentkeys=0{,0},0),0#,!<Tab>,;,:,o,O,e,!,=end,=else,=cat,=fina,=END,0\
+  nnoremap <Tab> i<Tab><Esc>^
+
+endfunction
+
 " }}}
 " }}}
-
-
 " }}}
