@@ -91,6 +91,11 @@ Bundle 'YankRing.vim'
 Bundle 'ZoomWin'
 "For Calendar
 let g:calendar_navi = ''
+
+" Builtin Vim things ---------------------------- {{{
+" For menus from the command line
+source $VIMRUNTIME/menu.vim
+" }}}
 " }}}
 " }}}
 
@@ -110,15 +115,15 @@ set hidden
 "Number of spaces a tab ('\t') is shown as
 set tabstop=8
 "Number spaces to use per step of autoindent (<< >> cindent)
-set shiftwidth=2
+set shiftwidth=4
 "Number of spaces pressing tab inserts
-set softtabstop=2
+set softtabstop=4
 "Presing tab inserts spaces
 set expandtab
 set smarttab
 
 "Scroll up or down when # lines away from edge
-set scrolloff=15
+set scrolloff=3
 set autoindent
 set smartindent
 "Alert me if a file has been changed
@@ -147,7 +152,7 @@ set laststatus=2
 set number
 
 " Don't try to highlight lines longer than 500 characters.
-set synmaxcol=500
+set synmaxcol=0
 
 " do not redraw while running macros (much faster) (LazyRedraw)
 set lazyredraw
@@ -428,9 +433,9 @@ sunmap w
 sunmap b
 sunmap e
 
-"set cpo-=<
-"set wcm=<C-Z>
-"map <F4> :emenu <C-Z>
+set cpo-=<
+set wcm=<C-Z>
+map <F5> :emenu <C-Z>
 
 "Nerdtree if no arguments given
 "autocmd vimenter * if !argc() | NERDTree | endif
@@ -511,8 +516,8 @@ augroup ft_python
     au FileType python setlocal foldmethod=indent
     au Filetype python setlocal foldnestmax=2
     au FileType python call SetNormalText()
-    au FileType python set shiftwidth=2
-    au FileType python set softtabstop=2
+    au FileType python set shiftwidth=4
+    au FileType python set softtabstop=4
 augroup END
 " }}}
 
@@ -569,10 +574,10 @@ function! TexAU()
   inoremap <buffer> ' ^
   inoremap <buffer> ; &
   inoremap <buffer> : %
-  inoremap <buffer> [ {}<lt>++><esc>4hi
-  inoremap <buffer> ] }
-  inoremap <buffer> { []<lt>++><esc>4hi
-  inoremap <buffer> } ]
+  inoremap <buffer> { {}<lt>++><esc>4hi
+  inoremap <buffer> } }
+  inoremap <buffer> [ []<lt>++><esc>4hi
+  inoremap <buffer> ] ]
   inoremap <buffer> ( ()<lt>++><esc>4hi
   inoremap <buffer> _ /
   inoremap <buffer> & '
